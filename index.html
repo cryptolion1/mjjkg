@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAW OF POWER</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('photo_2024-11-19_19-28-23.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            color: #fff;
+            overflow: auto; /* للسماح بالتمرير */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 100vw;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(17, 17, 17, 0.8);
+            width: 100%;
+            padding-top: 100px;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 94px;
+            left: 70px;
+            width: 61px;
+            height: 61px;
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 2px solid #fff; 
+            background-color: transparent;
+        }
+
+        .contract-box {
+            margin-top: 20px;
+            padding: 5px 10px; 
+            background-color: #222; 
+            border: 1px solid #555;
+            border-radius: 5px;
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center;
+            color: #00f0ff; 
+            font-size: 0.7rem; 
+        }
+
+        .contract-box span {
+            margin-left: 5px; 
+            cursor: pointer; 
+        }
+
+        header h1 {
+            font-size: 4vw;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-top: 20px;
+        }
+
+        .section {
+            position: relative;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            background-color: transparent;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            color: #00f0ff;
+            margin-top: 20px;
+            animation: slideInOnce 1.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .section:nth-child(even) {
+            background-color: transparent;
+        }
+
+        .section img {
+            width: 250px;
+            height: 250px;
+            background-color: transparent;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .section:hover p {
+            animation: slideInOnce 1.5s ease-out forwards;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes slideInOnce {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .marquee {
+            background: linear-gradient(90deg, #00FFFF, #FFA500, #FFFFFF);
+            color: #000;
+            border: 2px solid #FFA500;
+            padding: 5px 0;
+            font-size: 1.2rem;
+            width: 100%;
+            height: 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px #FFA500, 0 0 30px #00FFFF;
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        .marquee span {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 10s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .footer h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer .stickers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .footer .stickers img {
+            width: 250px;
+            height: 250px;
+            border: none; 
+            transition: transform 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+            background-color: transparent;
+        }
+
+        .footer .stickers img:hover {
+            transform: scale(1.1);
+        }
+
+        .footer .memes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .footer .memes img {
+            width: 250px;
+            height: 250px;
+            border: none; 
+            transition: transform 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+            background-color: transparent;
+        }
+
+        .footer .social-media {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .footer .social-media a img {
+            width: 60px;
+            height: 60px;
+            margin: 10px 0;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            background-color: transparent;
+            object-fit: cover;
+            display: block;
+        }
+
+        .footer .social-media img:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 5vw;
+            }
+
+            .section img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .section p {
+                font-size: 1rem;
+            }
+
+            .footer .stickers img,
+            .footer .memes img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .footer .social-media img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+        }
+    </style>
+    <script>
+        function copyToClipboard() {
+            const contractText = '5A4K5wHAuj6GrCegRCS6sx71JwUVu7NCqUkDXKS9pump';
+            navigator.clipboard.writeText(contractText);
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById('copy-btn').addEventListener('click', copyToClipboard);
+        });
+    </script>
+</head>
+<body>
+    <div class="marquee">
+        <span> Get money gain power </span>
+    </div>
+
+    <header>
+        <img src="photo_2024-11-19_23-55-26.jpg" alt="Logo" class="logo">
+        <h1>LAW OF POWER</h1>
+        <div class="contract-box">
+            5A4K5wHAuj6GrCegRCS6sx71JwUVu7NCqUkDXKS9pump <span id="copy-btn">copy</span>
+        </div>
+    </header>
+
+    <section class="section">
+        <img src="photo_2024-11-19_18-05-22.jpg" alt="Coin">
+        <p>Join the future of cryptocurrency with law of Power</p>
+    </section>
+    <section class="section">
+        <img src="photo_2024-11-20_00-09-36.jpg" alt="Coin">
+        <p>Unleash the potential of meme coins</p>
+    </section>
+    <section class="section">
+        <img src="photo_2024-11-19_18-06-46.jpg" alt="Coin">
+        <p>Empower your investments with Law of Power</p>
+    </section>
+
+    <div class="footer">
+        <h2>Stickers</h2>
+        <div class="stickers">
+            <img src="ترتتر.png" alt="Sticker 1">
+            <img src="لاتلا.png" alt="Sticker 2">
+            <img src="لبتاا.png" alt="Sticker 3">
+            <img src="تارار.png" alt="Sticker 4">
+        </div>
+        <h2>Memes</h2>
+        <div class="memes">
+            <img src="path_to_meme_image_1.png" alt="Meme 1">
+            <img src="path_to_meme_image_2.png" alt="Meme 2">
+                            <img src="path_to_meme_image_3.png" alt="Meme 3">
+                            <img src="path_to_meme_image_4.png" alt="Meme 4">
+                        </div>
+                        <div class="social-media">
+                            <a href="https://t.me/thelawofpower">
+                                <img src="photo_2024-11-19_21-06-34.jpg" alt="Telegram">
+                            </a>
+                            <a href="https://pump.fun/coin/5A4K5wHAuj6GrCegRCS6sx71JwUVu7NCqUkDXKS9pump">
+                                <img src="photo_2024-11-19_21-11-37.jpg" alt="Bampf">
+                            </a>
+                            <a href="https://x.com/TheLawOfPowerC">
+                                <img src="photo_2024-11-19_21-06-30.jpg" alt="Twitter">
+                            </a>
+                        </div>
+                    </div>
+                </body>
+                </html>
